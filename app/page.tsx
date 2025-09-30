@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import AudienceForm from '@/components/AudienceForm'
+import AudienceManager from '@/components/AudienceManager'
 import ConceptGenerator from '@/components/ConceptGenerator'
 import ConceptList from '@/components/ConceptList'
 import { supabase, type Audience, type Concept } from '@/lib/supabase'
@@ -11,6 +11,7 @@ export default function Home() {
   const [audiences, setAudiences] = useState<Audience[]>([])
   const [concepts, setConcepts] = useState<Concept[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedAudience, setSelectedAudience] = useState<Audience | null>(null)
 
   useEffect(() => {
     loadData()
@@ -32,8 +33,8 @@ export default function Home() {
     }
   }
 
-  const handleAudienceCreated = (audience: Audience) => {
-    setAudiences(prev => [audience, ...prev])
+  const handleAudienceSelected = (audience: Audience) => {
+    setSelectedAudience(audience)
   }
 
   const handleConceptGenerated = (concept: Concept) => {
@@ -61,24 +62,31 @@ export default function Home() {
             <p className="mt-4 text-muted-foreground">Loading...</p>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1 space-y-6">
-              <AudienceForm onAudienceCreated={handleAudienceCreated} />
-              
-              {audiences.length > 0 && (
+          <div className="space-y-8">
+            {/* Audience Manager */}
+            <AudienceManager onAudienceSelected={handleAudienceSelected} />
+            
+            {/* Concept Generation */}
+            {selectedAudience && (
+              <div className="grid lg:grid-cols-2 gap-8">
                 <ConceptGenerator 
-                  audiences={audiences} 
+                  audiences={[selectedAudience]} 
                   onConceptGenerated={handleConceptGenerated}
                 />
-              )}
-            </div>
-
-            <div className="lg:col-span-2">
+                <ConceptList 
+                  concepts={concepts}
+                  onConceptRemixed={handleConceptGenerated}
+                />
+              </div>
+            )}
+            
+            {/* All Concepts View */}
+            {!selectedAudience && concepts.length > 0 && (
               <ConceptList 
                 concepts={concepts}
                 onConceptRemixed={handleConceptGenerated}
               />
-            </div>
+            )}
           </div>
         )}
 

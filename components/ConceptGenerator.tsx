@@ -19,6 +19,13 @@ export default function ConceptGenerator({ audiences, onConceptGenerated }: Conc
   const [isGenerating, setIsGenerating] = useState(false)
   const { toast } = useToast()
 
+  // Auto-select if only one audience
+  useEffect(() => {
+    if (audiences.length === 1 && !selectedAudienceId) {
+      setSelectedAudienceId(audiences[0].id)
+    }
+  }, [audiences, selectedAudienceId])
+
   const handleGenerateConcept = async () => {
     if (!selectedAudienceId) return
 
@@ -81,21 +88,35 @@ export default function ConceptGenerator({ audiences, onConceptGenerated }: Conc
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="audience-select">Select Audience</Label>
-          <Select value={selectedAudienceId} onValueChange={setSelectedAudienceId}>
-            <SelectTrigger id="audience-select">
-              <SelectValue placeholder="Choose an audience" />
-            </SelectTrigger>
-            <SelectContent>
-              {audiences.map(audience => (
-                <SelectItem key={audience.id} value={audience.id}>
-                  {audience.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+        {audiences.length > 1 && (
+          <div className="space-y-2">
+            <Label htmlFor="audience-select">Select Audience</Label>
+            <Select value={selectedAudienceId} onValueChange={setSelectedAudienceId}>
+              <SelectTrigger id="audience-select">
+                <SelectValue placeholder="Choose an audience" />
+              </SelectTrigger>
+              <SelectContent>
+                {audiences.map(audience => (
+                  <SelectItem key={audience.id} value={audience.id}>
+                    {audience.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
+        
+        {audiences.length === 1 && (
+          <div className="space-y-2">
+            <Label>Selected Audience</Label>
+            <div className="p-3 bg-muted rounded-md">
+              <div className="font-medium">{audiences[0].name}</div>
+              <div className="text-sm text-muted-foreground">
+                {audiences[0].age_range} • {audiences[0].gender} • {audiences[0].location}
+              </div>
+            </div>
+          </div>
+        )}
 
         <Button 
           onClick={handleGenerateConcept} 
