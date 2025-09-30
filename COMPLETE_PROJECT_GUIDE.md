@@ -69,7 +69,7 @@ audience-concept-generator/
 │
 ├── 🗄️ DATABASE
 │   └── supabase/migrations/
-│       └── 20240101000000_initial_schema.sql
+│       └── 20250930000000_initial_schema.sql
 │
 ├── ⚙️ CONFIGURATION
 │   ├── package.json                         # Dependencies

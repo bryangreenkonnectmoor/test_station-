@@ -48,7 +48,7 @@ This will install all required packages (~2 minutes):
    - Open your Supabase project
    - Go to "SQL Editor" in left sidebar
    - Click "New Query"
-   - Copy entire contents of `supabase/migrations/20240101000000_initial_schema.sql`
+   - Copy entire contents of `supabase/migrations/20250930000000_initial_schema.sql`
    - Paste into editor
    - Click "Run" or press Ctrl+Enter
    - You should see "Success. No rows returned"

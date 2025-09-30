@@ -22,7 +22,7 @@ This guide walks you through deploying the Audience Concept Generator to product
 2. **Run Database Migration**:
    - In your Supabase project dashboard, go to "SQL Editor"
    - Click "New Query"
-   - Copy the contents of `supabase/migrations/20240101000000_initial_schema.sql`
+   - Copy the contents of `supabase/migrations/20250930000000_initial_schema.sql`
    - Paste and click "Run"
    - Verify tables were created in "Table Editor"
 

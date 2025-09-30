@@ -74,7 +74,7 @@ After creating `.env.local`, you need to set up the database:
 
 1. In your Supabase project, go to **SQL Editor**
 2. Click "New Query"
-3. Copy contents from `supabase/migrations/20240101000000_initial_schema.sql`
+3. Copy contents from `supabase/migrations/20250930000000_initial_schema.sql`
 4. Paste and click "Run"
 5. You should see "Success. No rows returned"
 

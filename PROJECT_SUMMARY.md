@@ -94,7 +94,7 @@ audience-concept-generator/
 │   └── utils.ts                         # Utility functions
 │
 ├── supabase/migrations/
-│   └── 20240101000000_initial_schema.sql # Database schema
+│   └── 20250930000000_initial_schema.sql # Database schema
 │
 ├── README.md                            # Complete project documentation
 ├── DECISIONS.md                         # Detailed decision rationale

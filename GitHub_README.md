@@ -55,7 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 
 Run the migration in your Supabase SQL Editor:
 ```sql
--- Copy contents from supabase/migrations/20240101000000_initial_schema.sql
+-- Copy contents from supabase/migrations/20250930000000_initial_schema.sql
 ```
 
 📖 **Detailed setup**: See [INSTALLATION.md](./INSTALLATION.md)

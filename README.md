@@ -48,7 +48,7 @@ OPENAI_API_KEY=your_openai_api_key
 4. **Set up Supabase**:
 
 - Create a new Supabase project at [supabase.com](https://supabase.com)
-- Run the migration file located at `supabase/migrations/20240101000000_initial_schema.sql` in your Supabase SQL editor
+- Run the migration file located at `supabase/migrations/20250930000000_initial_schema.sql` in your Supabase SQL editor
 - This will create the necessary tables (`audiences` and `concepts`) with proper RLS policies
 
 5. **Run the development server**:
@@ -265,7 +265,7 @@ OPENAI_API_KEY
 │   └── utils.ts                  # Utility functions
 ├── supabase/
 │   └── migrations/
-│       └── 20240101000000_initial_schema.sql
+│       └── 20250930000000_initial_schema.sql
 └── package.json
 ```
 
