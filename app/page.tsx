@@ -65,34 +65,30 @@ export default function Home() {
           <div className="space-y-8">
             {/* Audience Manager */}
             <AudienceManager onAudienceSelected={handleAudienceSelected} />
-            
+
             {/* Concept Generation */}
             {selectedAudience && (
               <div className="grid lg:grid-cols-2 gap-8">
-                <ConceptGenerator 
-                  audiences={[selectedAudience]} 
+                <ConceptGenerator
+                  audiences={[selectedAudience]}
                   onConceptGenerated={handleConceptGenerated}
                 />
-                <ConceptList 
+                <ConceptList
                   concepts={concepts}
                   onConceptRemixed={handleConceptGenerated}
                 />
               </div>
             )}
-            
+
             {/* All Concepts View */}
             {!selectedAudience && concepts.length > 0 && (
-              <ConceptList 
+              <ConceptList
                 concepts={concepts}
                 onConceptRemixed={handleConceptGenerated}
               />
             )}
           </div>
         )}
-
-        <footer className="mt-16 text-center text-sm text-muted-foreground">
-          <p>Built for Station Sciences · Powered by AI</p>
-        </footer>
       </div>
     </main>
   )
