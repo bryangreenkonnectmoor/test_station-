@@ -8,7 +8,7 @@ import { supabase, type Audience, type Concept } from '@/lib/supabase'
 import { Sparkles } from 'lucide-react'
 
 export default function Home() {
-  const [_audiences, setAudiences] = useState<Audience[]>([])
+  const [audiences, setAudiences] = useState<Audience[]>([])
   const [concepts, setConcepts] = useState<Concept[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [selectedAudience, setSelectedAudience] = useState<Audience | null>(null)
