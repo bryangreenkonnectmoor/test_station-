@@ -8,7 +8,7 @@ import { supabase, type Audience, type Concept } from '@/lib/supabase'
 import { Sparkles } from 'lucide-react'
 
 export default function Home() {
-  const [audiences, setAudiences] = useState<Audience[]>([])
+  const [_audiences, setAudiences] = useState<Audience[]>([])
   const [concepts, setConcepts] = useState<Concept[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [selectedAudience, setSelectedAudience] = useState<Audience | null>(null)
@@ -49,6 +49,10 @@ export default function Home() {
     )
   }
 
+  const handleConceptDeleted = (conceptId: string) => {
+    setConcepts(prev => prev.filter(concept => concept.id !== conceptId))
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -85,6 +89,7 @@ export default function Home() {
                   concepts={concepts}
                   onConceptRemixed={handleConceptGenerated}
                   onConceptUpdated={handleConceptUpdated}
+                  onConceptDeleted={handleConceptDeleted}
                 />
               </div>
             )}
@@ -95,6 +100,7 @@ export default function Home() {
                 concepts={concepts}
                 onConceptRemixed={handleConceptGenerated}
                 onConceptUpdated={handleConceptUpdated}
+                onConceptDeleted={handleConceptDeleted}
               />
             )}
           </div>
