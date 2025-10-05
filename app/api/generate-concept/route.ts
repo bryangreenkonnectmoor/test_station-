@@ -50,7 +50,7 @@ Generate a creative marketing concept tailored to this audience. Return ONLY a J
     }
 
     const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4o',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.8,
       response_format: { type: 'json_object' },

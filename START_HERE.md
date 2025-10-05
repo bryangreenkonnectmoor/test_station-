@@ -160,7 +160,7 @@ Visual README with:
   - Saves to Supabase
   
 - [x] **Requirement 2**: Generate Marketing Concept
-  - Uses OpenAI GPT-3.5 Turbo
+  - Uses OpenAI GPT-4o (latest model)
   - Based on audience demographics
   - Has title and description
   
@@ -191,7 +191,7 @@ Visual README with:
 | Framework | Next.js 14 |
 | Language | TypeScript |
 | Database | Supabase (PostgreSQL) |
-| AI | OpenAI GPT-3.5 Turbo |
+| AI | OpenAI GPT-4o |
 | Styling | Tailwind CSS |
 | Components | shadcn/ui |
 | Deployment | Vercel (recommended) |
@@ -308,7 +308,7 @@ Define target demographics:
 - Income level (5 tiers)
 
 ### AI Concept Generation
-- Powered by GPT-3.5 Turbo
+- Powered by GPT-4o (latest model)
 - Tailored to audience demographics
 - 2-5 second generation time
 - Structured title + description

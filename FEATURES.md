@@ -52,10 +52,11 @@ A detailed breakdown of all features in the Audience Concept Generator.
 4. View new concept in the list below
 
 **AI Technology**:
-- **Model**: OpenAI GPT-3.5 Turbo
+- **Model**: OpenAI GPT-4o (GPT-4 Optimized - latest model)
 - **Temperature**: 0.8 (creative but consistent)
 - **Output Format**: JSON for reliability
 - **Context**: Full audience demographics
+- **Quality**: Superior creative outputs compared to GPT-3.5
 
 **Output Structure**:
 ```json

@@ -16,7 +16,7 @@ Built for the **Station Sciences** technical interview, this application demonst
 
 ### 🎯 Core Functionality
 - **👥 Audience Creation** - Define target demographics with 6 key variables
-- **🤖 AI Concept Generation** - GPT-3.5 powered marketing concepts
+- **🤖 AI Concept Generation** - GPT-4o powered marketing concepts
 - **💾 Persistent Storage** - Supabase PostgreSQL with Row Level Security
 - **📊 Concept Viewing** - Beautiful card-based interface
 
@@ -71,7 +71,7 @@ Run the migration in your Supabase SQL Editor:
 | **Styling** | Tailwind CSS |
 | **UI Components** | shadcn/ui (Radix UI + Tailwind) |
 | **Database** | Supabase (PostgreSQL) |
-| **AI** | OpenAI GPT-3.5 Turbo |
+| **AI** | OpenAI GPT-4o |
 | **Icons** | Lucide React |
 | **Deployment** | Vercel (recommended) |
 
@@ -333,8 +333,8 @@ PostgreSQL with modern DX, built-in RLS for security, real-time capabilities for
 ### Why shadcn/ui?
 Components are owned (not npm dependencies), built on Radix UI (accessible), highly customizable, and Tailwind CSS integrated.
 
-### Why OpenAI GPT-3.5?
-Good balance of quality and cost, JSON mode ensures consistent outputs, fast response times, and reliable availability.
+### Why OpenAI GPT-4o?
+Latest GPT-4 Optimized model provides superior creative quality for marketing concepts, better understanding of audience nuances, JSON mode ensures consistent outputs, and fast response times with improved capabilities.
 
 📖 **Full rationale**: [DECISIONS.md](./DECISIONS.md)
 

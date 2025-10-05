@@ -19,7 +19,7 @@ This application allows marketing professionals to:
 - **Frontend**: Next.js 14 (App Router), React, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui components
 - **Database**: Supabase (PostgreSQL with Row Level Security)
-- **AI**: OpenAI GPT-3.5 Turbo
+- **AI**: OpenAI GPT-4o (latest GPT-4 Optimized model)
 - **Deployment**: Vercel (recommended)
 
 ## 📦 Installation
@@ -118,8 +118,10 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 **Rationale**:
 - Keeps API key secure on the server
-- GPT-3.5 Turbo provides good balance of quality and cost
+- GPT-4o provides superior creative quality for marketing concepts
+- Latest GPT-4 Optimized model with better audience understanding
 - JSON mode ensures consistent response structure
+- Fast response times with improved capabilities
 - Easy to swap for other LLM providers if needed
 
 ### 5. **State Management: React Hooks**

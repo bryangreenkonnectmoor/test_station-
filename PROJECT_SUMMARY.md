@@ -13,7 +13,7 @@ A complete, production-ready **Audience Concept Generator** for Station Sciences
    - Clean, intuitive UI
 
 2. **Generate Marketing Concepts** ✓
-   - AI-powered using OpenAI GPT-3.5 Turbo
+   - AI-powered using OpenAI GPT-4o (latest model)
    - Concepts tailored to specific audience demographics
    - Includes title and detailed description
    - Fast generation (2-5 seconds)
@@ -39,7 +39,7 @@ A complete, production-ready **Audience Concept Generator** for Station Sciences
 | **Styling** | Tailwind CSS | Utility-first, rapid development |
 | **UI Components** | shadcn/ui | Beautiful, accessible, customizable |
 | **Database** | Supabase (PostgreSQL) | Modern DX, built-in RLS, real-time ready |
-| **AI** | OpenAI GPT-3.5 Turbo | Cost-effective, reliable, structured outputs |
+| **AI** | OpenAI GPT-4o | Latest model, superior quality, reliable, structured outputs |
 | **Deployment** | Vercel (recommended) | Seamless Next.js integration |
 
 ## Key Features

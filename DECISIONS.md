@@ -70,23 +70,26 @@ This document outlines the key decisions made during development and the assumpt
 
 ---
 
-#### OpenAI GPT-3.5 Turbo
-**Decision**: Use OpenAI's GPT-3.5 Turbo for concept generation.
+#### OpenAI GPT-4o
+**Decision**: Use OpenAI's GPT-4o for concept generation.
 
 **Why**:
-- Good balance of quality and cost
+- Latest and most capable OpenAI model (GPT-4 Optimized)
+- Superior creative output for marketing concepts
+- Better understanding of nuanced audience demographics
 - JSON mode ensures structured responses
-- Fast response times
+- Fast response times with improved quality
 - Well-documented API
 - Reliable availability
 
 **Trade-offs**:
-- API costs (though minimal for demo)
+- Higher API costs than GPT-3.5 (~$0.005 per concept vs $0.002)
 - Requires API key management
 - External dependency
 
 **Alternatives Considered**:
-- GPT-4: Better quality but much more expensive
+- GPT-3.5 Turbo: More cost-effective but lower quality concepts
+- GPT-4 Turbo: Similar quality but GPT-4o is newer and faster
 - Claude: Good alternative but wanted to show OpenAI integration
 - Open-source models: More complex setup, potentially lower quality
 

@@ -238,8 +238,10 @@ OPENAI_API_KEY=sk-proj-xxxxx...
 
 **OpenAI**:
 - Pay-as-you-go pricing
-- GPT-3.5 Turbo: ~$0.002 per concept
-- Consider GPT-4 for better quality: ~$0.03 per concept
+- GPT-4o: ~$0.005 per concept (current model in use)
+- High-quality creative outputs worth the cost
+- GPT-3.5 Turbo alternative: ~$0.002 per concept (lower quality)
+- Note: Actual costs depend on prompt length and response size
 
 ## Security Hardening for Production
 

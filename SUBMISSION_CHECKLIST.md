@@ -20,7 +20,7 @@ Use this checklist before submitting your project to ensure everything is ready.
   - [x] Saves to Supabase
 
 - [x] **Requirement 2**: Generate Marketing Concept
-  - [x] Uses an LLM (OpenAI GPT-3.5 Turbo)
+  - [x] Uses an LLM (OpenAI GPT-4o)
   - [x] Concept based on audience demographics
   - [x] Has title and description
   - [x] AI integration working
@@ -159,7 +159,7 @@ I've completed the technical interview project. Here are the details:
 
 Key Features Implemented:
 ✅ Audience creation with 6 demographic variables
-✅ AI-powered concept generation using OpenAI GPT-3.5
+✅ AI-powered concept generation using OpenAI GPT-4o
 ✅ Supabase integration with PostgreSQL
 ✅ Bonus: Remix concept feature
 ✅ Modern UI with shadcn/ui and Tailwind CSS

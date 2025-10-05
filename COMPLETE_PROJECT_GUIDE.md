@@ -10,7 +10,7 @@ A production-ready, full-stack marketing concept generator with:
 
 ### ✅ All Core Requirements
 1. **Audience Creation** - Complete form with 6 demographic variables
-2. **AI Concept Generation** - OpenAI GPT-3.5 integration
+2. **AI Concept Generation** - OpenAI GPT-4o integration
 3. **Supabase Storage** - PostgreSQL with RLS policies
 4. **Concept Viewing** - Beautiful card-based display
 
@@ -105,7 +105,7 @@ audience-concept-generator/
 - ✅ Success feedback
 
 ### 2. AI Concept Generation
-- ✅ OpenAI GPT-3.5 Turbo integration
+- ✅ OpenAI GPT-4o integration
 - ✅ Audience-specific prompts
 - ✅ Structured JSON outputs
 - ✅ Title + description format
@@ -155,7 +155,7 @@ audience-concept-generator/
 | Styling | Tailwind CSS | 3.3.0 |
 | Components | shadcn/ui | Latest |
 | Database | Supabase | Latest |
-| AI | OpenAI | GPT-3.5 |
+| AI | OpenAI | GPT-4o |
 | Icons | Lucide React | 0.292.0 |
 
 ## 📊 Project Statistics
@@ -223,7 +223,7 @@ I've completed the Station Sciences technical interview project.
 
 ✅ All Requirements Met:
 • Create audiences with demographics
-• AI-powered concept generation (OpenAI GPT-3.5)
+• AI-powered concept generation (OpenAI GPT-4o)
 • Supabase database with RLS
 • Remix feature (bonus)
 
