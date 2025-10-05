@@ -41,6 +41,14 @@ export default function Home() {
     setConcepts(prev => [concept, ...prev])
   }
 
+  const handleConceptUpdated = (updatedConcept: Concept) => {
+    setConcepts(prev => 
+      prev.map(concept => 
+        concept.id === updatedConcept.id ? updatedConcept : concept
+      )
+    )
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -76,6 +84,7 @@ export default function Home() {
                 <ConceptList
                   concepts={concepts}
                   onConceptRemixed={handleConceptGenerated}
+                  onConceptUpdated={handleConceptUpdated}
                 />
               </div>
             )}
@@ -85,6 +94,7 @@ export default function Home() {
               <ConceptList
                 concepts={concepts}
                 onConceptRemixed={handleConceptGenerated}
+                onConceptUpdated={handleConceptUpdated}
               />
             )}
           </div>

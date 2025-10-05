@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     let prompt = ''
     
     if (parentConcept) {
-      prompt = `You are a creative marketing strategist. Based on the following audience and previous concept, generate a new marketing concept that remixes elements from the previous one with fresh ideas.
+      prompt = `You are a creative marketing strategist. Based on the following audience and original concept, create an updated version that remixes and improves upon the original with fresh creative ideas.
 
 Audience:
 - Name: ${audience.name}
@@ -22,11 +22,11 @@ Audience:
 - Interests: ${audience.interests.join(', ')}
 - Income Level: ${audience.income_level}
 
-Previous Concept to Remix:
+Original Concept to Remix:
 Title: ${parentConcept.title}
 Description: ${parentConcept.description}
 
-Generate a new marketing concept that builds upon or remixes the previous concept. Return ONLY a JSON object with this exact structure:
+Generate an improved marketing concept that remixes and enhances the original. Keep the core essence but add fresh creative elements. Return ONLY a JSON object with this exact structure:
 {
   "title": "Compelling concept title",
   "description": "Detailed concept description (2-3 sentences)"

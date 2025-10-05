@@ -11,9 +11,10 @@ import { useToast } from '@/components/ui/use-toast'
 interface ConceptListProps {
   concepts: Concept[]
   onConceptRemixed: (concept: Concept) => void
+  onConceptUpdated: (concept: Concept) => void
 }
 
-export default function ConceptList({ concepts, onConceptRemixed }: ConceptListProps) {
+export default function ConceptList({ concepts, onConceptRemixed, onConceptUpdated }: ConceptListProps) {
   const [remixingId, setRemixingId] = useState<string | null>(null)
   const { toast } = useToast()
 
@@ -36,23 +37,22 @@ export default function ConceptList({ concepts, onConceptRemixed }: ConceptListP
 
       const { data, error } = await supabase
         .from('concepts')
-        .insert({
-          audience_id: concept.audience_id,
+        .update({
           title: remixedConcept.title,
           description: remixedConcept.description,
-          parent_concept_id: concept.id,
         })
+        .eq('id', concept.id)
         .select('*, audience:audiences(*)')
         .single()
 
       if (error) throw error
 
       toast({
-        title: 'Concept remixed successfully',
+        title: 'Concept updated successfully',
         description: remixedConcept.title,
       })
 
-      onConceptRemixed(data)
+      onConceptUpdated(data)
     } catch (error) {
       console.error('Error remixing concept:', error)
       toast({
