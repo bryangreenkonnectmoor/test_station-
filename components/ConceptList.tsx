@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { type Concept } from '@/lib/supabase'
-import { Calendar, Sparkles, Users, RefreshCw } from 'lucide-react'
+import { Calendar, Sparkles, Users, RefreshCw, Trash2 } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
 import { useToast } from '@/components/ui/use-toast'
 
@@ -12,10 +12,12 @@ interface ConceptListProps {
   concepts: Concept[]
   onConceptRemixed: (concept: Concept) => void
   onConceptUpdated: (concept: Concept) => void
+  onConceptDeleted: (conceptId: string) => void
 }
 
-export default function ConceptList({ concepts, onConceptRemixed, onConceptUpdated }: ConceptListProps) {
+export default function ConceptList({ concepts, onConceptRemixed, onConceptUpdated, onConceptDeleted }: ConceptListProps) {
   const [remixingId, setRemixingId] = useState<string | null>(null)
+  const [deletingId, setDeletingId] = useState<string | null>(null)
   const { toast } = useToast()
 
   const handleRemix = async (concept: Concept) => {
@@ -62,6 +64,35 @@ export default function ConceptList({ concepts, onConceptRemixed, onConceptUpdat
       })
     } finally {
       setRemixingId(null)
+    }
+  }
+
+  const handleDelete = async (concept: Concept) => {
+    setDeletingId(concept.id)
+
+    try {
+      const { error } = await supabase
+        .from('concepts')
+        .delete()
+        .eq('id', concept.id)
+
+      if (error) throw error
+
+      toast({
+        title: 'Concept deleted successfully',
+        description: `"${concept.title}" has been removed.`,
+      })
+
+      onConceptDeleted(concept.id)
+    } catch (error) {
+      console.error('Error deleting concept:', error)
+      toast({
+        title: 'Error',
+        description: 'Failed to delete concept. Please try again.',
+        variant: 'destructive',
+      })
+    } finally {
+      setDeletingId(null)
     }
   }
 
@@ -139,25 +170,44 @@ export default function ConceptList({ concepts, onConceptRemixed, onConceptUpdat
                 </div>
               )}
 
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => handleRemix(concept)}
-                disabled={remixingId === concept.id}
-                className="w-full"
-              >
-                {remixingId === concept.id ? (
-                  <>
-                    <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                    Remixing...
-                  </>
-                ) : (
-                  <>
-                    <RefreshCw className="mr-2 h-4 w-4" />
-                    Remix This Concept
-                  </>
-                )}
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleRemix(concept)}
+                  disabled={remixingId === concept.id || deletingId === concept.id}
+                  className="flex-1"
+                >
+                  {remixingId === concept.id ? (
+                    <>
+                      <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                      Remixing...
+                    </>
+                  ) : (
+                    <>
+                      <RefreshCw className="mr-2 h-4 w-4" />
+                      Remix This Concept
+                    </>
+                  )}
+                </Button>
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => handleDelete(concept)}
+                  disabled={deletingId === concept.id || remixingId === concept.id}
+                  className="flex-shrink-0"
+                >
+                  {deletingId === concept.id ? (
+                    <>
+                      <RefreshCw className="h-4 w-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      <Trash2 className="h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </div>
             </CardContent>
           </Card>
         ))}
